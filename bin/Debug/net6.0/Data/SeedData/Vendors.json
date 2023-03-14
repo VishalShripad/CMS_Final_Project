@@ -1,0 +1,22 @@
+[
+  {
+    "Id": 1,
+    "Name": "Star",
+    "Description": "Star Networks"
+  },
+  {
+    "Id": 2,
+    "Name": "Colors",
+    "Description": "Colors Networks"
+  },
+  {
+    "Id": 3,
+    "Name": "Zee",
+    "Description": "Zee Networks"
+  },
+  {
+    "Id": 4,
+    "Name": "Sony",
+    "Description": "Sony Networks"
+  }
+]

@@ -1,0 +1,209 @@
+[
+  {
+    "Name": "Big Magic",
+    "Description": "This is a channel for showing Big Magic Entertainment in Hindi.",
+    "Price": 20,
+    "PictureUrl": "/images/channels/big-magic.gif",
+    "ChannelGenreId": 1,
+    "ChannelLanguageId": 1,
+    "VendorsId": 1
+  },
+  {
+    "Name": "Colors Infinity",
+    "Description": "This is a channel for showing Colors Infinity Entertainment in Hindi.",
+    "Price": 25,
+    "PictureUrl": "/images/channels/colors-infinity.gif",
+    "ChannelGenreId": 1,
+    "ChannelLanguageId": 1,
+    "VendorsId": 2
+  },
+  {
+    "Name": "Comedy Central",
+    "Description": "This is a channel for showing Comedy Central in English.",
+    "Price": 15,
+    "PictureUrl": "/images/channels/comedy-central.gif",
+    "ChannelGenreId": 1,
+    "ChannelLanguageId": 2,
+    "VendorsId": 3
+  },
+  {
+    "Name": "Star World",
+    "Description": "This is a channel for showing Star World in English.",
+    "Price": 18,
+    "PictureUrl": "/images/channels/star-world.gif",
+    "ChannelGenreId": 1,
+    "ChannelLanguageId": 2,
+    "VendorsId": 4
+  },
+  {
+    "Name": "Zee Cafe",
+    "Description": "This is a channel for showing Zee Cafe in English.",
+    "Price": 20,
+    "PictureUrl": "/images/channels/zee-cafe.gif",
+    "ChannelGenreId": 1,
+    "ChannelLanguageId": 2,
+    "VendorsId": 1
+  },
+  {
+    "Name": "Baby TV HD",
+    "Description": "This is a channel for showing Baby TV HD in Hindi.",
+    "Price": 25,
+    "PictureUrl": "/images/channels/baby-tv-hd.gif",
+    "ChannelGenreId": 2,
+    "ChannelLanguageId": 1,
+    "VendorsId": 2
+  },
+  {
+    "Name": "Cartoon Network",
+    "Description": "This is a channel for showing Cartoon Network in Hindi.",
+    "Price": 15,
+    "PictureUrl": "/images/channels/cartoon-network.gif",
+    "ChannelGenreId": 2,
+    "ChannelLanguageId": 1,
+    "VendorsId": 3
+  },
+  {
+    "Name": "Discovery Kids",
+    "Description": "This is a channel for showing Discovery Kids in Hindi.",
+    "Price": 18,
+    "PictureUrl": "/images/channels/discovery-kids.gif",
+    "ChannelGenreId": 2,
+    "ChannelLanguageId": 1,
+    "VendorsId": 4
+  },
+  {
+    "Name": "Disney Junior",
+    "Description": "This is a channel for showing Disney Junior in Hindi.",
+    "Price": 20,
+    "PictureUrl": "/images/channels/disney-junior.gif",
+    "ChannelGenreId": 2,
+    "ChannelLanguageId": 1,
+    "VendorsId": 1
+  },
+  {
+    "Name": "Hungama TV",
+    "Description": "This is a channel for showing Hungama TV in English.",
+    "Price": 25,
+    "PictureUrl": "/images/channels/hungama-tv.gif",
+    "ChannelGenreId": 2,
+    "ChannelLanguageId": 2,
+    "VendorsId": 2
+  },
+  {
+    "Name": "Nick Jr",
+    "Description": "This is a channel for showing Nick Jr in English.",
+    "Price": 15,
+    "PictureUrl": "/images/channels/nick-jr.gif",
+    "ChannelGenreId": 2,
+    "ChannelLanguageId": 2,
+    "VendorsId": 3
+  },
+  {
+    "Name": "Pogo",
+    "Description": "This is a channel for showing Pogo in English.",
+    "Price": 18,
+    "PictureUrl": "/images/channels/pogo.gif",
+    "ChannelGenreId": 2,
+    "ChannelLanguageId": 2,
+    "VendorsId": 4
+  },
+  {
+    "Name": "Sonic Nickelodeon",
+    "Description": "This is a channel for showing Sonic Nickelodeon in English.",
+    "Price": 20,
+    "PictureUrl": "/images/channels/sonic-nickelodeon.gif",
+    "ChannelGenreId": 2,
+    "ChannelLanguageId": 2,
+    "VendorsId": 1
+  },
+  {
+    "Name": "CNN News18",
+    "Description": "This is a channel for showing CNN News18 in Hindi.",
+    "Price": 25,
+    "PictureUrl": "/images/channels/cnn-news18.gif",
+    "ChannelGenreId": 3,
+    "ChannelLanguageId": 1,
+    "VendorsId": 3
+  },
+  {
+    "Name": "Mirror Now",
+    "Description": "This is a channel for showing Mirror Now in Hindi.",
+    "Price": 15,
+    "PictureUrl": "/images/channels/mirror-now.gif",
+    "ChannelGenreId": 3,
+    "ChannelLanguageId": 1,
+    "VendorsId": 4
+  },
+  {
+    "Name": "Republic TV",
+    "Description": "This is a channel for showing Republic TV in English.",
+    "Price": 25,
+    "PictureUrl": "/images/channels/republic-tv.gif",
+    "ChannelGenreId": 3,
+    "ChannelLanguageId": 2,
+    "VendorsId": 1
+  },
+  {
+    "Name": "Times Now",
+    "Description": "This is a channel for showing Times Now in English.",
+    "Price": 15,
+    "PictureUrl": "/images/channels/times-now.gif",
+    "ChannelGenreId": 3,
+    "ChannelLanguageId": 2,
+    "VendorsId": 2
+  },
+  {
+    "Name": "DD Sports",
+    "Description": "This is a channel for showing DD Sports in Hindi.",
+    "Price": 18,
+    "PictureUrl": "/images/channels/dd-sports.gif",
+    "ChannelGenreId": 4,
+    "ChannelLanguageId": 1,
+    "VendorsId": 4
+  },
+  {
+    "Name": "Eurosport HD",
+    "Description": "This is a channel for showing Eurosport HD in Hindi.",
+    "Price": 25,
+    "PictureUrl": "/images/channels/eurosport-hd.gif",
+    "ChannelGenreId": 4,
+    "ChannelLanguageId": 1,
+    "VendorsId": 1
+  },
+  {
+    "Name": "Sony Sports Ten 3",
+    "Description": "This is a channel for showing Sony Sports Ten 3 in Hindi.",
+    "Price": 15,
+    "PictureUrl": "/images/channels/sony-sports-ten-3.gif",
+    "ChannelGenreId": 4,
+    "ChannelLanguageId": 1,
+    "VendorsId": 2
+  },
+  {
+    "Name": "Sports 18 1 HD",
+    "Description": "This is a channel for showing Sports 18 1 HD in English.",
+    "Price": 18,
+    "PictureUrl": "/images/channels/sports-18-1-hd.gif",
+    "ChannelGenreId": 4,
+    "ChannelLanguageId": 2,
+    "VendorsId": 3
+  },
+  {
+    "Name": "Star Sports 2 HD",
+    "Description": "This is a channel for showing Star Sports 2 HD in English.",
+    "Price": 15,
+    "PictureUrl": "/images/channels/star-sports-2-hd.gif",
+    "ChannelGenreId": 4,
+    "ChannelLanguageId": 2,
+    "VendorsId": 4
+  },
+  {
+    "Name": "Star Sports 3",
+    "Description": "This is a channel for showing Star Sports 3 in English.",
+    "Price": 18,
+    "PictureUrl": "/images/channels/star-sports-3.gif",
+    "ChannelGenreId": 4,
+    "ChannelLanguageId": 2,
+    "VendorsId": 1
+  }
+]
