@@ -1,13 +1,20 @@
 ﻿using AutoMapper;
 using CMS.API.Dtos;
 using CMS.API.Entities;
+using CMS.API.Repositories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.IdentityModel.Tokens;
+using System.ComponentModel.DataAnnotations;
 using System.IdentityModel.Tokens.Jwt;
+using System.Reflection.Metadata.Ecma335;
 using System.Security.Claims;
+using System.Security.Cryptography;
 using System.Text;
-using NETCore.MailKit.Core;
+
+
 
 namespace CMS.API.Controllers
 {
@@ -61,24 +68,24 @@ namespace CMS.API.Controllers
             {
                 await _userManager.AddToRoleAsync(userToCreate, "Member");
 
-                //var NewMessage = new Message
-                //(
-                //    new string[] { userToCreate.Email },
-                //    "<h1>Thank you for choosing CMS. Your CMS account is created.</h1>"
-                //);
+                var NewMessage = new Message
+                (
+                    new string[] { userToCreate.Email },
+                    "<h1>Thank you for choosing CMS. Your CMS account is created.</h1>"
+                );
 
-                //EmailNotification(NewMessage);
+                EmailNotification(NewMessage);
 
-                //var adm = await _userManager.GetUsersInRoleAsync("ADMIN");
-                //var adminEmail = adm.FirstOrDefault().Email;
+                var adm = await _userManager.GetUsersInRoleAsync("ADMIN");
+                var adminEmail = adm.FirstOrDefault().Email;
 
-                //var adminMessage = new Message
-                //(
-                //    new string[] { adminEmail },
-                //    $"User with email {userToCreate.Email} is now registered with CMS."
-                //);
+                var adminMessage = new Message
+                (
+                    new string[] { adminEmail },
+                    $"User with email {userToCreate.Email} is now registered with CMS."
+                );
 
-                //EmailNotification(adminMessage);
+                EmailNotification(adminMessage);
 
                 return StatusCode(StatusCodes.Status200OK,
                     new ApiResponse
@@ -128,6 +135,7 @@ namespace CMS.API.Controllers
                     });
         }
 
+        [HttpGet("emailexists")]
         public async Task<ActionResult<bool>> CheckEmailExistsAsync([FromQuery] string email)
         {
             return await _userManager.FindByEmailAsync(email) != null;
@@ -160,7 +168,7 @@ namespace CMS.API.Controllers
                 Expires = DateTime.UtcNow.AddDays(1),
                 SigningCredentials = creds
             };
-
+            
             var tokenHandler = new JwtSecurityTokenHandler();
 
             var token = tokenHandler.CreateToken(tokenDescriptor);
@@ -168,6 +176,53 @@ namespace CMS.API.Controllers
             return tokenHandler.WriteToken(token);
         }
 
+
+        private async Task<IActionResult> EmailNotification(Message message)
+        {
+            _emailService.SendEmail(message);
+            return Ok();
+        }
+
+        [HttpPost("forgotPassword")]
+        [AllowAnonymous]
+        public async Task<IActionResult> ForgotPassword(string email)
+        {
+            var user = await _userManager.FindByEmailAsync(email);
+            if (user != null)
+            {
+                var token = await _userManager.GeneratePasswordResetTokenAsync(user);
+
+                string frontendUrl = _config.GetSection("AppSettings:FrontEndUrl").Value;
+
+                //var forgotPasswordLink =
+                //    Url.Action(nameof(ResetPasswrd), "Auth", new { token, email = user.Email }, Request.Scheme, frontendUrl);
+
+                var param = new Dictionary<string, string?>
+                {
+                    {"token", token },
+                    {"email", user.Email }
+                };
+
+                var forgotPasswordLink = QueryHelpers.AddQueryString($"{frontendUrl}reset-password", param);
+
+                var newMessage = new Message
+                (
+                new string[] { user.Email },
+                forgotPasswordLink
+                );
+
+                EmailNotification(newMessage);
+
+                return Ok($"Email sent to {user.Email} successfully");
+            }
+
+            return StatusCode(StatusCodes.Status403Forbidden,
+                    new ApiResponse
+                    {
+                        Status = "Error",
+                        Message = $"User with email {email} has not been registered."
+                    });
+        }
 
         [HttpGet("reset-password")]
         public async Task<IActionResult> ResetPasswrd(string token, string email)
@@ -222,11 +277,5 @@ namespace CMS.API.Controllers
     }
 }
 
-        //private async Task<IActionResult> EmailNotification(Message message)
-        //{
-        //    _emailService.SendEmail(message);
-        //    return Ok();
-        //}
 
 
-   
